@@ -1,0 +1,25 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "SKU",
+            "cwd": "${workspaceRoot}",
+            "executable": "${workspaceRoot}/build/src/adagio_sku/adagio_sku.elf",
+            "request": "launch",
+            "type": "cortex-debug",
+            "servertype": "openocd",
+            "device": "STM32F205VE",
+            "configFiles": [
+                "interface/stlink.cfg",
+                "target/stm32f2x.cfg"
+            ],
+            "interface": "swd",
+            "showDevDebugOutput": true,
+            "runToMain": true,
+            "svdFile": "${workspaceRoot}/STM32F20x.svd"
+        }
+    ]
+}

@@ -1,0 +1,5 @@
+.settings
+.pyc
+release/build/
+.mypy_cache
+/.vscode/*

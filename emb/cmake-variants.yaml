@@ -1,0 +1,24 @@
+buildType:
+  default: debug
+  choices:
+    debug:
+      short: Debug
+      long: Emit debug information
+      buildType: Debug
+    release:
+      short: Release
+      long: Optimize generated code
+      buildType: Release
+cortex:
+  default: m3
+  choices:
+    m3:
+      short: m3
+      long: Cortex M3
+      settings:
+        TOOLCHAIN_CORTEX_CONFIG: cortex-m3
+    m4:
+      short: m4
+      long: Cortex M4
+      settings:
+        TOOLCHAIN_CORTEX_CONFIG: cortex-m4

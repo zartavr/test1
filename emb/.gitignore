@@ -1,0 +1,15 @@
+# include directory used for installed headers like opencm3
+# see https://github.com/kigster/cmake-project-template
+# find include/ -> externally exported header files
+
+/include
+
+# libraries usually exported too by installing 
+# lib/ -> compiled library we are exporting
+
+# other
+/build
+.settings
+!.settings/com.atollic.truestudio.debug.hardware_device.prefs // stm target settings
+
+.pyc
