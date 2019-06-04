@@ -18,7 +18,7 @@
 
 Структура папок корневой директории описана в Redmine:
 `Создание и работа над проектом
-<http://redmine.pin/easy_knowledge_stories/80>`_.
+<http://redmine.pin/easy_knowledge_stories/80>`__.
 
 
 1.2 Папка emb
@@ -54,32 +54,32 @@
 - **cmake** — содержит *.cmake*-файлы для упрощённого менеджмента
   CMake структуры проекта. Данная папка должна подключаться как
   git `submodule` репозитория `CMake files <https://gitlab.pin
-  /thirdpin_team/cmake-files>`_;
+  /thirdpin_team/cmake-files>`__;
 
 - **patches** - содержит git-патчи для 3th party библиотек,
   которые компилируются в процессе компиляции проекта
   (например для `libopencm3 <https://github.com/libopencm3/
-  libopencm3>`_);
+  libopencm3>`__);
 
 - **util** — содержит доп. утилиты для работы с проектом, а так
   же *launch*-файлы для работы с отладчиком в Eclipse/TrueStudio;
 
 - **.vscode** [опционально] — может хранить в себе файлы для
-  конфигурации `VS Code <https://code.visualstudio.com/>`_  и
+  конфигурации `VS Code <https://code.visualstudio.com/>`__  и
   его расширений. Может включать такие файлы как:
 
   - **c_cpp_properties.json** —
     настройка `C/C++ расширения
     <https://github.com/microsoft/vscode-cpptools/
     blob/master/Documentation/Getting%20started%20with
-    %20IntelliSense%20configuration.md>`_
+    %20IntelliSense%20configuration.md>`__
   - **cmake-kits.json** — настройка toolchain для
     `расширения CMake <https://vector-of-bool.github.io/
-    docs/vscode-cmake-tools/kits.html>`_
+    docs/vscode-cmake-tools/kits.html>`__
   - **launch.json** — настройка `отладки <https://code.
-    visualstudio.com/docs/editor/debugging>`_ приложения
+    visualstudio.com/docs/editor/debugging>`__ приложения
     для `расширения Cortex Debug <https://marketplace.
-    visualstudio.com/items?itemName=marus25.cortex-debug>`_
+    visualstudio.com/items?itemName=marus25.cortex-debug>`__
   - **.gitignore** — игнорируемые Git-ом файлы, должны быть
     включены все файлы, кроме перечисленных выше;
 
@@ -87,12 +87,12 @@
   Eclipce/TrueStudio, появляются только после импорта
   папки с проектом в IDE, инструкция тут: `Настройка и
   использование CMake <http://redmine.pin/easy_knowledge_stories
-  /116>`_;
+  /116>`__;
 
 - **STM32Fxxx.svd** [опционально] — `файл описывающий регистры
-  <https://www.keil.com/pack/doc/CMSIS/SVD/html/svd_Format_pg.html>`_
+  <https://www.keil.com/pack/doc/CMSIS/SVD/html/svd_Format_pg.html>`__
   периферии МК от STM32. Скачать можно здесь: `posborne/cmsis-svd
-  <https://github.com/posborne/cmsis-svd/tree/master/data/STMicro>`_;
+  <https://github.com/posborne/cmsis-svd/tree/master/data/STMicro>`__;
   данный файл используется расширением Cortex Debug для VS Code;
 
 - **cmake-variants.yaml** [опционально] — файл, описывающий
@@ -113,7 +113,7 @@
 
 
 Для кроссплатформенной и унифицированной компиляции проекта
-используется `CMake <https://en.wikipedia.org/wiki/CMake>`_.
+используется `CMake <https://en.wikipedia.org/wiki/CMake>`__.
 Обязательным требованием к использованию данного шаблона является
 его понимание, а так же наличие в ``PATH`` пути до ``cmake.exe`` —
 запускаемого файла CMake. Требуемая версия: 3.13 и выше.
@@ -143,7 +143,7 @@ emb/src
 Добавление библиотек к сборке осуществляется с помощью
 команды ``add_subdirectory``. Если библиотека не поддерживает сборку
 с помощью CMake, то необходимо (на примере библиотеки
-`yxml <https://code.blicky.net/yorhel/yxml>`_):
+`yxml <https://code.blicky.net/yorhel/yxml>`__):
 
 1. Инкапсулировать библиотеку дополнительно в директорию с именем
    библиотеки. Например, изначальная если изначальная структура
@@ -195,6 +195,10 @@ emb/src
 
 4. Добавить библиотеку с помощью команды ``add_subdirectory(yxml)``
    в файле ``/emb/src/CMakeLists.txt``.
+
+    Исключение составляет библиотека `OpenCM3`. Для её компиляции
+    необходимо использовать макрос ``add_libopencm3_for``. Пример
+    использования макрос есть в файле ``/emb/src/CMakeLists.txt``.
 
 Добавление подпроектов к сборке происходит аналогично библиотекам
 с поддержкой CMake. Структура типового подпроекта описана ниже.
@@ -259,16 +263,16 @@ emb/src/<subproject>
    следующие репозитории:
 
    - **libopencm3** (/emb/src/libopencm3) — опциональная
-     библиотека `OpenCM3 <https://libopencm3.org/>`_ для
+     библиотека `OpenCM3 <https://libopencm3.org/>`__ для
      работы с периферией контроллеров;
 
    - **etl** (/emb/src/etl) — опциональная библиотека
-     `Embedded Template Library <https://www.etlcpp.com/>`_
+     `Embedded Template Library <https://www.etlcpp.com/>`__
      с множеством полезных классов заменяющих и
      дополняющих std;
 
    - **yxml** (/emb/src/yxml) — опциональная библиотека
-     `yxml <https://code.blicky.net/yorhel/yxml>`_
+     `yxml <https://code.blicky.net/yorhel/yxml>`__
      для парсинга xml;
 
    - **cmake** (/cmake) — **обязательный** submodule с
@@ -309,6 +313,9 @@ emb/src/<subproject>
         разделённые символом подчёркивания "\_". Символ
         дефиса "-" для разделения слов лучше не использовать.
 
+        Имя основной цели проекта или подпроекта должно
+        совпадать с именем проекта и подпроекта соответственно.
+
 5. Папку ``/emb/src/template`` переименовать в папку с именем
    вашего проекта; добавить переименованную папку в
    ``/emb/src/CMakeLists.txt``.
@@ -328,3 +335,115 @@ emb/src/<subproject>
 11. Сделать commit, push.
 
 
+3. How to compile
+=================
+
+3.1 Необходимые зависимости
+---------------------------
+
+Основные зависимости для сборки любого проекта это:
+
+- `CMake <https://cmake.org/>`__ [in PATH] — основной
+  инструмент для организации и сборки проекта;
+
+- `Ninja <https://ninja-build.org/>`__ [in PATH] — более
+  легковесная, быстрая и портативная альтернатива `make
+  <https://ru.wikipedia.org/wiki/Make>`__;
+
+- компилятор (любой из) [in PATH]:
+
+  - `GNU ARG GCC <https://developer.arm.com/
+    tools-and-software/open-source-software/developer-tools
+    /gnu-toolchain/gnu-rm>`__ — форк ``gcc``, поставляемый
+    компанией ARM;
+
+  - `Clang <http://releases.llvm.org/download.html#8.0.0>`__ —
+    современный компилятор, пришедший на замену ``gcc``,
+    поддерживает компиляцию под ARM;
+
+- `Windows Subsystem for Linux (WSL) <https://docs.microsoft.
+  com/ru-ru/windows/wsl/install-win10>`__ [только для Windows] —
+  слой совместимости для запуска Linux-приложений, необходим
+  для сборки библиотеки OpenCM3. Так же требуется установить
+  следующие пакеты в WSL:
+
+  - make
+  - python
+  - `gcc-arm-embedded <https://launchpad.net/
+    ~team-gcc-arm-embedded/+archive/ubuntu/ppa>`__
+  - git
+
+
+3.2 Порядок сборки
+------------------
+
+    Далее будет описана сборка исключительно с использованием консоли.
+    Описание настройки сборки из-под IDE ищите в Redmine.
+
+Перед началом сборки необходимо создать папку **/emb/build** и перейти
+в неё. 
+
+
+Конфигурация
+++++++++++++
+
+Для запуска конфигурации необходимо указать флаги:
+
+- `\-DCMAKE_TOOLCHAIN_FILE` — пусть до toolchain-файла, выбирается
+  в зависимости от компилятора. Для Clang это
+  "cmake/toolchains/toolchain-clang.cmake";
+
+- `\-DCMAKE_BUILD_TYPE` — тип сборки два основных это *Debug* и
+  *Release*. В последнем во время компиляции добавляются флаги
+  оптимизации (обычно O3), убираются символы отладки из бинарика
+  и добавляется дефайн :cpp:`NDEBUG`. Другие типы сборки можно
+  посмотреть в `документации CMake <https://cmake.org/cmake/help
+  /git-stage/variable/CMAKE_BUILD_TYPE.html>`__.
+
+- `\-DTOOLCHAIN_CORTEX_CONFIG` — выбор ядра, для которого
+  осуществляется компиляция. По-умолчанию, это *cortex-m3*,
+  но возможны варианты *cortex-m0*, *cortex-m4* и *cortex-a9*.
+
+- `\-GNinja` — выбор генератора, т.е. по сути это выбор формата
+  генерируемых Makefile-ов. Так как мы используем Ninja, то флаг
+  соответствующий;
+
+- `\-DCMAKE_INSTALL_PREFIX` [опционально] — место установки
+  бинарников и сопровождающих файлов. Может быть использовано
+  при создании релизов, но для сборки не обязательно.
+
+Итого получаем:
+
+    .. code-block:: bash
+
+        mrdir build
+        cd build
+        cmake -DCMAKE_TOOLCHAIN_FILE=../cmake/toolchains/toolchain-clang.cmake -DTOOLCHAIN_CORTEX_CONFIG=cortex-m4 -DCMAKE_BUILD_TYPE=Release -GNinja ..
+
+Если для запуска используется **PowerShell** необходимо указывать
+абсолютный путь до toolchain-файла. Последние две точки в команде
+указывают на расположение корневого `CMakeLists.txt` файла.
+
+
+Сборка
+++++++
+
+Для сборки необходимо запустить следующую команду, находясь
+в папке **emb/src/build**:
+
+    .. code-block:: bash
+
+        cmake --build . --target all
+
+Для сборки конкретной целим можно вместо ``all`` указать
+имя цели, например
+
+    .. code-block:: bash
+
+        cmake --build . --target my_subproject
+
+Для сборки и установки используется команда
+
+    .. code-block:: bash
+
+        cmake --build . --target install
