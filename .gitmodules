@@ -7,3 +7,6 @@
 [submodule "emb/src/libopencm3"]
 	path = emb/src/libopencm3
 	url = ../../thirdpin_team/libopencm3.git
+[submodule "emb/src/yxml/yxml"]
+	path = emb/src/yxml/yxml
+	url = https://code.blicky.net/yorhel/yxml.git

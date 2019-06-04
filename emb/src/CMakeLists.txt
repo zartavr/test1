@@ -21,6 +21,9 @@
     )
 ## <--
 
+# Add other libs
+add_subdirectory(yxml)
+
 ## --> Compile projects
     add_subdirectory(template)
 ## <--
