@@ -21,8 +21,12 @@ build:
 
     - mkdir -p ./bin
 
+    - mv ./build/src/template/template.hex ./bin
     - mv ./build/src/template/template.elf ./bin
+    - mv ./build/src/template/template.bin ./bin
 
   artifacts:
     paths:
       - emb/bin/template.hex
+      - emb/bin/template.elf
+      - emb/bin/template.bin
