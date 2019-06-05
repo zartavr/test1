@@ -1,0 +1,28 @@
+stages:
+  - build
+
+variables:
+  GIT_STRATEGY: fetch
+  GIT_CHECKOUT: "true"
+  GIT_SUBMODULE_STRATEGY: recursive
+
+build:
+  stage: build
+  
+  before_script:
+    - rm -r ./emb/bin
+
+  script:
+    - cd emb
+    - cmake -Bbuild -G Ninja -DCMAKE_TOOLCHAIN_FILE="./cmake/toolchains/toolchain-clang.cmake" -DCMAKE_BUILD_TYPE=Release .
+    - cd build
+    - cmake --build .
+    - cd ../
+
+    - mkdir -p ./bin
+
+    - mv ./build/src/template/template.elf ./bin
+
+  artifacts:
+    paths:
+      - emb/bin/template.hex
