@@ -1,0 +1,12 @@
+[submodule "emb/cmake"]
+	path = emb/cmake
+	url = ../../thirdpin_team/cmake-files.git
+[submodule "emb/src/etl"]
+	path = emb/src/etl
+	url = https://github.com/ETLCPP/etl.git
+[submodule "emb/src/libopencm3"]
+	path = emb/src/libopencm3
+	url = ../../thirdpin_team/libopencm3.git
+[submodule "emb/src/yxml/yxml"]
+	path = emb/src/yxml/yxml
+	url = https://code.blicky.net/yorhel/yxml.git
