@@ -258,7 +258,7 @@ emb/src/<subproject>
 
    .. code-block:: bash
 
-        git clone git@gitlab.pin:thirdpin_team/project-template.git myproject
+        git clone --recurse-submodules git@gitlab.pin:thirdpin_team/project-template.git myproject
 
 2. Проект по-умолчанию включает в себя в качестве submodules
    следующие репозитории:
