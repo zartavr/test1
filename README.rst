@@ -282,29 +282,31 @@ emb/src/<subproject>
 
    **ВАЖНО**: если вы хотите убрать из сборки одну из
    представленных выше опциональных бибилотек необходимо
-   сделать следующее (на примере etl):
+   сделать следующее (на примере yxml):
 
    1) деинициализировать submodule:
 
       .. code-block:: bash
 
-        git submodule deinit /emb/src/yxml
+        git submodule deinit emb/src/yxml/yxml
 
    2) удалить папку с submodule;
 
       .. code-block:: bash
 
-        git rm /emb/src/yxml
+        git rm -r emb/src/yxml
 
-   3) сделать коммит с удалённым модулем;
-   4) удалить папку ``/.git/modules/emb/src/yxml``.
+   3) удалить строчку `add_subdirectory(yxml)`
+      в файле **/emb/src/CMakeLists.txt**;
+   4) сделать коммит с удалённым модулем;
+   5) удалить папку ``/.git/modules/emb/src/yxml/yxml``.
 
 3. Изменить ``remote`` локального репозитория на новый
    заранее созданный удалённый пустой репозиторий:
 
    .. code-block:: bash
 
-       git remote set-url origin git@gitlab.pin:thirdpin_team/myproject.git
+       git remote set-url origin <your-git-repo-url>
 
 4. Поменять имя проекта верхнего уровня в файле
    ``/emb/CMakeLists.txt``.
@@ -324,7 +326,7 @@ emb/src/<subproject>
 6. В файле ``/emb/src/myproject/CMakeLists.txt`` необходимо
    изменить ``project(...)`` на имя вашего подпроекта.
 
-7. Создать папку ``/emb/src/myproject/include/myproject`` в
+7. Создать папку ``/emb/src/myproject/include/myproject``, в
    которую будет генерироваться файл с версией.
 
 8. Удалить из ``target_link_libraries`` у подпроекта лишние
@@ -422,11 +424,11 @@ emb/src/<subproject>
 
 Итого получаем:
 
-    .. code-block:: bash
+.. code-block:: bash
 
-        mrdir build
-        cd build
-        cmake -DCMAKE_TOOLCHAIN_FILE=../cmake/toolchains/toolchain-clang.cmake -DTOOLCHAIN_CORTEX_CONFIG=cortex-m4 -DCMAKE_BUILD_TYPE=Release -GNinja ..
+    mrdir build
+    cd build
+    cmake -DCMAKE_TOOLCHAIN_FILE=../cmake/toolchains/toolchain-clang.cmake -DTOOLCHAIN_CORTEX_CONFIG=cortex-m4 -DCMAKE_BUILD_TYPE=Release -GNinja ..
 
 Если для запуска используется **PowerShell** необходимо указывать
 абсолютный путь до toolchain-файла. Последние две точки в команде
@@ -439,22 +441,22 @@ emb/src/<subproject>
 Для сборки необходимо запустить следующую команду, находясь
 в папке **emb/src/build**:
 
-    .. code-block:: bash
+.. code-block:: bash
 
-        cmake --build . --target all
+    cmake --build . --target all
 
 Для сборки конкретной целим можно вместо ``all`` указать
 имя цели, например
 
-    .. code-block:: bash
+.. code-block:: bash
 
-        cmake --build . --target my_subproject
+    cmake --build . --target my_subproject
 
 Для сборки и установки используется команда
 
-    .. code-block:: bash
+.. code-block:: bash
 
-        cmake --build . --target install
+    cmake --build . --target install
 
 3.2 Gitlab CI
 -------------
