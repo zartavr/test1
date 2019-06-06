@@ -19,7 +19,7 @@
             "interface": "swd",
             "showDevDebugOutput": true,
             "runToMain": true,
-            "svdFile": "${workspaceRoot}/STM32F20x.svd"
+            "svdFile": "${workspaceRoot}/util/STM32F20x.svd"
         }
     ]
 }

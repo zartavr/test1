@@ -61,8 +61,13 @@
   (например для `libopencm3 <https://github.com/libopencm3/
   libopencm3>`__);
 
-- **util** — содержит доп. утилиты для работы с проектом, а так
-  же *launch*-файлы для работы с отладчиком в Eclipse/TrueStudio;
+- **util** — содержит доп. утилиты для работы с проектом,
+  *launch*-файлы для работы с отладчиком в Eclipse/TrueStudio,
+  а так же `файлы описывающие регистры
+  <https://www.keil.com/pack/doc/CMSIS/SVD/html/svd_Format_pg.html>`__
+  периферии МК от STM32. Скачать можно здесь: `posborne/cmsis-svd
+  <https://github.com/posborne/cmsis-svd/tree/master/data/STMicro>`__;
+  эти файлы используется расширением Cortex Debug для VS Code;
 
 - **.vscode** [опционально] — может хранить в себе файлы для
   конфигурации `VS Code <https://code.visualstudio.com/>`__  и
@@ -88,12 +93,6 @@
   папки с проектом в IDE, инструкция тут: `Настройка и
   использование CMake <http://redmine.pin/easy_knowledge_stories
   /116>`__;
-
-- **STM32Fxxx.svd** [опционально] — `файл описывающий регистры
-  <https://www.keil.com/pack/doc/CMSIS/SVD/html/svd_Format_pg.html>`__
-  периферии МК от STM32. Скачать можно здесь: `posborne/cmsis-svd
-  <https://github.com/posborne/cmsis-svd/tree/master/data/STMicro>`__;
-  данный файл используется расширением Cortex Debug для VS Code;
 
 - **cmake-variants.yaml** [опционально] — файл, описывающий
   возможные конфигурации сборки CMake и соответствующие им
@@ -150,23 +149,23 @@ emb/src
    библиотеки. Например, изначальная если изначальная структура
    библиотеки следующая:
 
-    .. code-block:: 
+   .. code-block:: 
 
-      yxml
-       › yxml.c
-       › yxml.h
-       › ...
+     yxml
+      › yxml.c
+      › yxml.h
+      › ...
 
    необходимо инкапсулировать библиотеку в папку с именем **yxml**,
    т.е.:
 
-    .. code-block:: 
+   .. code-block:: 
 
-       yxml
-         yxml
-           › yxml.c
-           › yxml.h
-           › ...
+      yxml
+        yxml
+          › yxml.c
+          › yxml.h
+          › ...
 
 2. Создать файл ``yxml/CMakeLists.txt``, в нём создать цель сборки
    (target) для библиотеки. В качестве имени цели сборки использовать
@@ -259,7 +258,7 @@ emb/src/<subproject>
 
    .. code-block:: bash
 
-        git clone git@gitlab.pin:thirdpin_team/project-template.git myproject
+        git clone --recurse-submodules git@gitlab.pin:thirdpin_team/project-template.git myproject
 
 2. Проект по-умолчанию включает в себя в качестве submodules
    следующие репозитории:
@@ -283,29 +282,31 @@ emb/src/<subproject>
 
    **ВАЖНО**: если вы хотите убрать из сборки одну из
    представленных выше опциональных бибилотек необходимо
-   сделать следующее (на примере etl):
+   сделать следующее (на примере yxml):
 
    1) деинициализировать submodule:
 
       .. code-block:: bash
 
-        git submodule deinit /emb/src/yxml
+        git submodule deinit emb/src/yxml/yxml
 
    2) удалить папку с submodule;
 
       .. code-block:: bash
 
-        git rm /emb/src/yxml
+        git rm -r emb/src/yxml
 
-   3) сделать коммит с удалённым модулем;
-   4) удалить папку ``/.git/modules/emb/src/yxml``.
+   3) удалить строчку `add_subdirectory(yxml)`
+      в файле **/emb/src/CMakeLists.txt**;
+   4) сделать коммит с удалённым модулем;
+   5) удалить папку ``/.git/modules/emb/src/yxml/yxml``.
 
 3. Изменить ``remote`` локального репозитория на новый
    заранее созданный удалённый пустой репозиторий:
 
    .. code-block:: bash
 
-       git remote set-url origin git@gitlab.pin:thirdpin_team/myproject.git
+       git remote set-url origin <your-git-repo-url>
 
 4. Поменять имя проекта верхнего уровня в файле
    ``/emb/CMakeLists.txt``.
@@ -325,7 +326,7 @@ emb/src/<subproject>
 6. В файле ``/emb/src/myproject/CMakeLists.txt`` необходимо
    изменить ``project(...)`` на имя вашего подпроекта.
 
-7. Создать папку ``/emb/src/myproject/include/myproject`` в
+7. Создать папку ``/emb/src/myproject/include/myproject``, в
    которую будет генерироваться файл с версией.
 
 8. Удалить из ``target_link_libraries`` у подпроекта лишние
@@ -333,7 +334,13 @@ emb/src/<subproject>
 
 9. Удалить из **main.cpp** лишний код.
 
+10. Добавить файл линкера **myproject.ld** в папку
+    **/emb/src/myproject/**.
+
 10. Собрать (см. п. 3).
+
+12. Исправить файл **/.gitlab-ci.yml**: исправить пути до
+    компилируемых бинарников.
 
 11. Сделать commit, push.
 
@@ -417,11 +424,11 @@ emb/src/<subproject>
 
 Итого получаем:
 
-    .. code-block:: bash
+.. code-block:: bash
 
-        mrdir build
-        cd build
-        cmake -DCMAKE_TOOLCHAIN_FILE=../cmake/toolchains/toolchain-clang.cmake -DTOOLCHAIN_CORTEX_CONFIG=cortex-m4 -DCMAKE_BUILD_TYPE=Release -GNinja ..
+    mrdir build
+    cd build
+    cmake -DCMAKE_TOOLCHAIN_FILE=../cmake/toolchains/toolchain-clang.cmake -DTOOLCHAIN_CORTEX_CONFIG=cortex-m4 -DCMAKE_BUILD_TYPE=Release -GNinja ..
 
 Если для запуска используется **PowerShell** необходимо указывать
 абсолютный путь до toolchain-файла. Последние две точки в команде
@@ -434,22 +441,22 @@ emb/src/<subproject>
 Для сборки необходимо запустить следующую команду, находясь
 в папке **emb/src/build**:
 
-    .. code-block:: bash
+.. code-block:: bash
 
-        cmake --build . --target all
+    cmake --build . --target all
 
 Для сборки конкретной целим можно вместо ``all`` указать
 имя цели, например
 
-    .. code-block:: bash
+.. code-block:: bash
 
-        cmake --build . --target my_subproject
+    cmake --build . --target my_subproject
 
 Для сборки и установки используется команда
 
-    .. code-block:: bash
+.. code-block:: bash
 
-        cmake --build . --target install
+    cmake --build . --target install
 
 3.2 Gitlab CI
 -------------
