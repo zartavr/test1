@@ -5,9 +5,9 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "SKU",
+            "name": "Template Debug",
             "cwd": "${workspaceRoot}",
-            "executable": "${workspaceRoot}/build/src/adagio_sku/adagio_sku.elf",
+            "executable": "${workspaceRoot}/build/src/template/template.elf",
             "request": "launch",
             "type": "cortex-debug",
             "servertype": "openocd",
