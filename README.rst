@@ -61,8 +61,13 @@
   (например для `libopencm3 <https://github.com/libopencm3/
   libopencm3>`__);
 
-- **util** — содержит доп. утилиты для работы с проектом, а так
-  же *launch*-файлы для работы с отладчиком в Eclipse/TrueStudio;
+- **util** — содержит доп. утилиты для работы с проектом,
+  *launch*-файлы для работы с отладчиком в Eclipse/TrueStudio,
+  а так же `файлы описывающие регистры
+  <https://www.keil.com/pack/doc/CMSIS/SVD/html/svd_Format_pg.html>`__
+  периферии МК от STM32. Скачать можно здесь: `posborne/cmsis-svd
+  <https://github.com/posborne/cmsis-svd/tree/master/data/STMicro>`__;
+  эти файлы используется расширением Cortex Debug для VS Code;
 
 - **.vscode** [опционально] — может хранить в себе файлы для
   конфигурации `VS Code <https://code.visualstudio.com/>`__  и
@@ -88,12 +93,6 @@
   папки с проектом в IDE, инструкция тут: `Настройка и
   использование CMake <http://redmine.pin/easy_knowledge_stories
   /116>`__;
-
-- **STM32Fxxx.svd** [опционально] — `файл описывающий регистры
-  <https://www.keil.com/pack/doc/CMSIS/SVD/html/svd_Format_pg.html>`__
-  периферии МК от STM32. Скачать можно здесь: `posborne/cmsis-svd
-  <https://github.com/posborne/cmsis-svd/tree/master/data/STMicro>`__;
-  данный файл используется расширением Cortex Debug для VS Code;
 
 - **cmake-variants.yaml** [опционально] — файл, описывающий
   возможные конфигурации сборки CMake и соответствующие им
