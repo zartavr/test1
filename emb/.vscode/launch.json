@@ -37,7 +37,8 @@
                 ],
                 "enabled": true,
                 "source": "probe",
-                "swoFrequency": 0
+                "swoFrequency": 2000,
+                "cpuFrequency": 16000000
             }
         }
     ]
