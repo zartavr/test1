@@ -19,7 +19,26 @@
             "interface": "swd",
             "showDevDebugOutput": true,
             "runToMain": true,
-            "svdFile": "${workspaceRoot}/util/STM32F20x.svd"
+            "svdFile": "${workspaceRoot}/util/STM32F20x.svd",
+            "swoConfig": {
+                "decoders": [
+                    {
+                        "port": 0,
+                        "label": "sys",
+                        "encoding": "ascii",
+                        "type": "console",
+                    },
+                    {
+                        "port": 1,
+                        "label": "main",
+                        "encoding": "ascii",
+                        "type": "console"
+                    },
+                ],
+                "enabled": true,
+                "source": "probe",
+                "swoFrequency": 0
+            }
         }
     ]
 }
