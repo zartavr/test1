@@ -1,3 +1,9 @@
+/**
+ * THIS FILE SHOULD BE REMOVED FROM
+ * ACTUAL PROJECT. THIS IS JUST A
+ * STUB.
+ */
+
 #include <libopencm3/stm32/gpio.h>
 
 #include <hw/HwStub.hpp>
