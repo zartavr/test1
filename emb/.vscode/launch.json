@@ -5,7 +5,7 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Template Debug",
+            "name": "Debug (OpenOCD)",
             "cwd": "${workspaceRoot}",
             "executable": "${workspaceRoot}/build/src/template/template.elf",
             "request": "launch",
@@ -19,7 +19,60 @@
             "interface": "swd",
             "showDevDebugOutput": true,
             "runToMain": true,
-            "svdFile": "${workspaceRoot}/util/STM32F20x.svd"
+            "svdFile": "${workspaceRoot}/util/STM32F20x.svd",
+            "swoConfig": {
+                "decoders": [
+                    {
+                        "port": 0,
+                        "label": "sys",
+                        "encoding": "ascii",
+                        "type": "console",
+                    },
+                    {
+                        "port": 1,
+                        "label": "main",
+                        "encoding": "ascii",
+                        "type": "console"
+                    },
+                ],
+                "enabled": true,
+                "source": "probe",
+                "swoFrequency": 2000,
+                "cpuFrequency": 16000000
+            }
+        },
+        {
+            "name": "Debug (J-Link)",
+            "type": "cortex-debug",
+            "request": "launch",
+            "servertype": "jlink",
+            "cwd": "${workspaceRoot}",
+            "executable": "${workspaceRoot}/build/src/template/template.elf",
+            "device": "STM32F205VE",
+            "interface": "swd",
+            "ipAddress": null,
+            "serialNumber": null,
+            "showDevDebugOutput": true,
+            "runToMain": true,
+            "svdFile": "${workspaceRoot}/util/STM32F20x.svd",
+            "swoConfig": {
+                "decoders": [
+                    {
+                        "port": 0,
+                        "label": "sys",
+                        "encoding": "ascii",
+                        "type": "console",
+                    },
+                    {
+                        "port": 1,
+                        "label": "main",
+                        "encoding": "ascii",
+                        "type": "console"
+                    },
+                ],
+                "enabled": true,
+                "source": "probe",
+            }
         }
     ]
 }

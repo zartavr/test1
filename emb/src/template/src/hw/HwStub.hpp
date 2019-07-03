@@ -1,3 +1,9 @@
+/**
+ * THIS FILE SHOULD BE REMOVED FROM
+ * ACTUAL PROJECT. THIS IS JUST A
+ * STUB.
+ */
+
 #pragma once
 
 #include <etl/delegate.h>
