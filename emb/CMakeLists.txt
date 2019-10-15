@@ -37,4 +37,7 @@ include(AddElfExecutable)
 include(VersionTargetGenerator)
 include(ExesGenerator)
 
+# Enable the most useful warnings for all projects
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wextra -Wconversion -Wsign-conversion")
+
 add_subdirectory(src)
