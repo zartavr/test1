@@ -1,5 +1,6 @@
 stages:
   - build
+  - pages
 
 variables:
   GIT_STRATEGY: fetch
@@ -30,3 +31,16 @@ build:
       - emb/bin/template.hex
       - emb/bin/template.elf
       - emb/bin/template.bin
+
+pages:
+  stage: pages
+  image: registry.gitlab.thirdpin.io/devops/sphinx-build:latest
+  script:
+  - cd doc/sphinx
+  - make html
+  - mv _build/html/ ../../public
+  artifacts:
+    paths:
+    - public
+  only:
+  - master

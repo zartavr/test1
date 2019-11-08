@@ -1,0 +1,15 @@
+stages:
+  - pages
+
+pages:
+  stage: pages
+  image: registry.gitlab.thirdpin.io/devops/sphinx-build:latest
+  script:
+  - make html
+  - mv _build/html/ public
+  artifacts:
+    paths:
+    - public
+  only:
+  - master
+
