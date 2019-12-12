@@ -1,0 +1,5 @@
+Sphinx
+requests
+doc8
+sphinx-rtd-theme
+sphinxcontrib.plantuml
