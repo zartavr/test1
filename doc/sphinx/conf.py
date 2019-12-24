@@ -396,4 +396,3 @@ plantuml = [
         os.path.join(os.path.dirname(__file__), "utils", "plantuml.jar")
     ),
 ]
-
