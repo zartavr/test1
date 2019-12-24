@@ -9,7 +9,7 @@ variables:
 
 build:
   stage: build
-  
+
   before_script:
     - rm -r ./emb/bin
 
@@ -34,13 +34,13 @@ build:
 
 pages:
   stage: pages
-  image: registry.gitlab.thirdpin.io/devops/sphinx-build:latest
+  image: registry.gitlab.thirdpin.io/devops/sphinx-build:v0.4-python3
   script:
-  - cd doc/sphinx
-  - make html
-  - mv _build/html/ ../../public
+    - cd doc/sphinx
+    - make html
+    - mv _build/html/ ../../public
   artifacts:
     paths:
-    - public
+      - public
   only:
-  - master
+    - master

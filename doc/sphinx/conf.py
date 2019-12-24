@@ -301,7 +301,7 @@ latex_documents = [
         "Template Project Documentation",
         "Third pin",
         "manual",
-    ),
+    )
 ]
 
 # The name of an image file (relative to this directory) to place at the top of
@@ -341,7 +341,9 @@ latex_documents = [
 
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
-man_pages = [(master_doc, "Template", "Template Project Documentation", [author], 1)]
+man_pages = [
+    (master_doc, "Template", "Template Project Documentation", [author], 1)
+]
 
 # If true, show URL addresses after external links.
 #
@@ -362,7 +364,7 @@ texinfo_documents = [
         "Template",
         "Template is Project",
         "Miscellaneous",
-    ),
+    )
 ]
 
 # Documents to append as an appendix to all manuals.
@@ -387,5 +389,10 @@ texinfo_documents = [
 
 # Some notes about path:
 # https://bitbucket.org/birkenfeld/sphinx-contrib/issues/154/plantuml-on-windows7-with-python-2711
-# plantuml = ['java',  '-jar', os.path.abspath(os.path.join(os.path.dirname(__file__), 'utils', 'plantuml.jar'))]
-
+plantuml = [
+    "java",
+    "-jar",
+    os.path.abspath(
+        os.path.join(os.path.dirname(__file__), "utils", "plantuml.jar")
+    ),
+]
