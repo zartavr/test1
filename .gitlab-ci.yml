@@ -9,6 +9,7 @@ variables:
 
 build:
   stage: build
+  image: registry.gitlab.thirdpin.io/devops/thirdpin-builder:v0.3
 
   before_script:
     - rm -r ./emb/bin
