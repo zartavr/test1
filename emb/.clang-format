@@ -1,6 +1,9 @@
 ---
 
-# https://zed0.co.uk/clang-format-configurator/
+# Required version of clang-format: >9.0.0
+
+# Targeted language
+Language: Cpp
 
 BasedOnStyle: Mozilla
 AccessModifierOffset: '-3'
@@ -23,7 +26,7 @@ AlwaysBreakAfterReturnType: None
 AllowShortLoopsOnASingleLine: 'false'
 BreakBeforeInheritanceComma: 'false'
 
-ColumnLimit: '80'
+ColumnLimit: '90'
 ConstructorInitializerAllOnOneLineOrOnePerLine: 'true'
 AllowAllParametersOfDeclarationOnNextLine: 'false'
 ExperimentalAutoDetectBinPacking: 'false'
@@ -32,6 +35,8 @@ BreakBeforeBinaryOperators: None
 
 NamespaceIndentation: None
 
+SpaceBeforeAssignmentOperators: 'true'
+SpaceAfterTemplateKeyword: 'false'
 SpaceAfterCStyleCast: 'false'
 SpaceBeforeParens: ControlStatements
 SpaceInEmptyParentheses: 'false'
@@ -41,6 +46,7 @@ Standard: Auto
 TabWidth: '4'
 UseTab: Never
 BreakConstructorInitializers: AfterColon
+BreakInheritanceList: BeforeComma
 
 Cpp11BracedListStyle: 'true'
 FixNamespaceComments: 'true'
@@ -68,13 +74,13 @@ BraceWrapping: {
 # The number of columns to use for indentation.
 IndentWidth: '4'
 
-# Targeted language
-Language: Cpp
-
 # Pointer is aligned to right side
 # PointerAlignment: Left
 
 IndentWrappedFunctionNames: 'false'
 
 KeepEmptyLinesAtTheStartOfBlocks: 'true'
-...
+
+MaxEmptyLinesToKeep: 2
+
+PointerAlignment: Left
