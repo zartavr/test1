@@ -10,3 +10,6 @@
 [submodule "emb/src/yxml/yxml"]
 	path = emb/src/yxml/yxml
 	url = https://code.blicky.net/yorhel/yxml.git
+[submodule "emb/src/expected"]
+	path = emb/src/expected
+	url = https://github.com/thirdpin/expected.git

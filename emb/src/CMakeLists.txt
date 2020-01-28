@@ -21,6 +21,11 @@
     )
 ## <--
 
+## --> Compile expected lib
+    set(EXPECTED_BUILD_TESTS OFF CACHE BOOL "Build unit tests of expected" FORCE)
+    add_subdirectory(expected)
+## <--
+
 # Add other libs
 add_subdirectory(yxml)
 

@@ -34,6 +34,7 @@ target_link_libraries(${PROJECT_NAME}
         # Link public libraries
         etl
         yxml
+        expected
         Opencm3::stm32f2
 
         # Generate version

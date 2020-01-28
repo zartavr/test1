@@ -7,13 +7,26 @@
 #pragma once
 
 #include <etl/delegate.h>
+#include <tl/expected.hpp>
 
 namespace hw {
+
+enum class Error_t
+{
+    BAD_STUFF
+};
+
+template<typename T>
+using expected = tl::expected<T, Error_t>;
+
 class HwStub
 {
  public:
+    using Doable = etl::delegate<int(int)>;
+
     explicit HwStub(uint32_t gpioport, uint8_t pin);
-    int do_something(const etl::delegate<int(int)>& something);
+
+    expected<int> do_something(const Doable& something);
 
  private:
     HwStub(const HwStub&) = delete;
