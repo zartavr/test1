@@ -15,7 +15,13 @@
 	url = https://github.com/thirdpin/expected.git
 [submodule "emb/src/named_type"]
 	path = emb/src/named_type
-	url = git@gitlab.thirdpin.io:thirdpin_team/cpp-libs/named_type.git
+	url = ../../thirdpin_team/cpp-libs/named_type.git
 [submodule "emb/src/magic_enum"]
 	path = emb/src/magic_enum
 	url = https://github.com/thirdpin/magic_enum.git
+[submodule "emb/src/tplib"]
+	path = emb/src/tplib
+	url = ../../thirdpin_team/tplib.git
+[submodule "emb/src/cm3cpp"]
+	path = emb/src/cm3cpp
+	url = https://github.com/thirdpin/libopencm3_cpp_extensions.git

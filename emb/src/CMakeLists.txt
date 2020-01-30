@@ -36,6 +36,8 @@ set(BACKUP_CMAKE_CXX_STANDARD ${CMAKE_CXX_STANDARD})
 # Add other libs
 add_subdirectory(magic_enum)
 add_subdirectory(named_type)
+add_subdirectory(cm3cpp)
+add_subdirectory(tplib)
 add_subdirectory(yxml)
 
 # Revert standard if it was chaged by libraries

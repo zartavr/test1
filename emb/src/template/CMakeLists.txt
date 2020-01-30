@@ -34,6 +34,8 @@ target_link_libraries(${PROJECT_NAME}
         # Link public libraries
         etl
         yxml
+        cm3cpp
+        tplib::hw
         expected
         magic_enum
         named_type
