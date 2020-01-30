@@ -13,3 +13,6 @@
 [submodule "emb/src/expected"]
 	path = emb/src/expected
 	url = https://github.com/thirdpin/expected.git
+[submodule "emb/src/named_type"]
+	path = emb/src/named_type
+	url = git@gitlab.thirdpin.io:thirdpin_team/cpp-libs/named_type.git
