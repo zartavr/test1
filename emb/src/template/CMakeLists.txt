@@ -35,6 +35,7 @@ target_link_libraries(${PROJECT_NAME}
         etl
         yxml
         expected
+        magic_enum
         named_type
         Opencm3::stm32f2
 

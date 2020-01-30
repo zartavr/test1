@@ -16,3 +16,6 @@
 [submodule "emb/src/named_type"]
 	path = emb/src/named_type
 	url = git@gitlab.thirdpin.io:thirdpin_team/cpp-libs/named_type.git
+[submodule "emb/src/magic_enum"]
+	path = emb/src/magic_enum
+	url = https://github.com/thirdpin/magic_enum.git
