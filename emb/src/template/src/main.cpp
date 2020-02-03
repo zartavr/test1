@@ -1,7 +1,7 @@
 #include <libopencm3/stm32/gpio.h>
 #include <yxml/yxml.h>
 
-#include <hw/HwStub.hpp>
+#include <hw/HwStub.hpp>  // it is just an example, remove it from actual project
 #include <template/version.h>
 
 int main()
@@ -16,9 +16,15 @@ int main()
 
     hw::HwStub hw_stub(GPIOA, GPIO1);
 
+    int32_t value = 0;
     while (true) {
-        static uint32_t value = 0;
-        value += hw_stub.do_something([](int value) { return value + 666; });
+        auto op_result =
+          hw_stub.do_something([&value](int v) { return value + v; })
+            .map([&value](auto e) { value += e; });
+
+        if (!op_result) {
+            while (true) {}
+        }
     }
 
     return 0;
