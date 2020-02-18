@@ -402,3 +402,6 @@ plantuml = [
         os.path.join(os.path.dirname(__file__), "utils", "plantuml.jar")
     ),
 ]
+
+# Format of generated UML diagrams
+plantuml_output_format = "svg_img"
