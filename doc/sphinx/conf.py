@@ -16,7 +16,6 @@
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 #
-# import os
 # import sys
 # sys.path.insert(0, os.path.abspath('.'))
 
@@ -393,15 +392,17 @@ texinfo_documents = [
 # Example configuration for intersphinx: refer to the Python standard library.
 # intersphinx_mapping = {'https://docs.python.org/': None}
 
+# Plant UML configuration
 # Some notes about path:
 # https://bitbucket.org/birkenfeld/sphinx-contrib/issues/154/plantuml-on-windows7-with-python-2711
-plantuml = [
-    "java",
-    "-jar",
-    os.path.abspath(
-        os.path.join(os.path.dirname(__file__), "utils", "plantuml.jar")
-    ),
-]
+if os.name == "nt":
+    plantuml = [
+        "java",
+        "-jar",
+        os.path.abspath(
+            os.path.join(os.path.dirname(__file__), "utils", "plantuml.jar")
+        ),
+    ]
 
-# Format of generated UML diagrams
+# Render diagrams as `svg` in <img> tag
 plantuml_output_format = "svg_img"
