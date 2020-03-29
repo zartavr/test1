@@ -11,7 +11,7 @@
 #
 # All configuration values have a default; values that are commented out
 # serve to show the default.
-    
+
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
@@ -279,6 +279,9 @@ if project_name and project_namespace and project_ref_name and project_host:
 # Include custom roles in each file of docs
 rst_prolog = open("global_roles.rst", "r").read()
 
+# Enable a figure (and over stuff) numeration in a caption
+numfig = True
+
 # -- Options for LaTeX output ---------------------------------------------
 
 latex_elements = {
@@ -341,7 +344,7 @@ latex_documents = [
 #
 # latex_domain_indices = True
 
-latex_engine = 'xelatex'
+latex_engine = "xelatex"
 
 
 # -- Options for manual page output ---------------------------------------
