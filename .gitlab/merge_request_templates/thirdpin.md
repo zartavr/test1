@@ -13,5 +13,5 @@ TASK-
 
 
 <!-- Перед слиянием убедиться, что все галочки заполнены -->
-- [] Для изменений, меняющих поведение, дописан changelog.txt или они отсутствуют
-- [] В `Merge options` отмечено “Delete source branch when merge request is accepted”
+- [ ] Для изменений, меняющих поведение, дописан changelog.txt или они отсутствуют
+- [ ] В `Merge options` отмечено “Delete source branch when merge request is accepted”
