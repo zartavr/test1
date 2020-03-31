@@ -1,6 +1,6 @@
 <!--
     Прочитать перед созданием Merge Request
-    http://wiki.pin/doku.php/programmers/workflow/review
+    http://wiki.pin/doku.php/programmers/workflow/review#сценарий_author
 -->
 
 <!-- Дописать номер задачи, в которую будет списывать время ревьювер -->
