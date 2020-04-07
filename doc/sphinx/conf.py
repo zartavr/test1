@@ -256,25 +256,33 @@ html_search_language = "en,ru"
 # html_search_scorer = 'scorer.js'
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = "SmartOfficedoc"
+htmlhelp_basename = "ProjectTemplate"
 
-project_name = os.getenv("CI_PROJECT_NAME")
-project_namespace = os.getenv("CI_PROJECT_NAMESPACE")
-project_ref_name = os.getenv("CI_COMMIT_REF_NAME")
-project_host = os.getenv("CI_SERVER_HOST")
+# Gitlab integration
+html_context = {
+    "display_gitlab": True,  # Integrate Gitlab
+    "gitlab_host": "gitlab.thirdpin.io",
+    "gitlab_user": "thirdpin_team",  # Username / namespace
+    "gitlab_repo": "project-template",  # Repo name
+    "gitlab_version": "master",  # Version
+    "conf_py_path": "/doc/sphinx/",  # Path in the checkout to the docs root
+}
 
-html_context = {}
+if "CI_JOB_ID" in os.environ:
+    project_name = os.getenv("CI_PROJECT_NAME")
+    project_namespace = os.getenv("CI_PROJECT_NAMESPACE")
+    project_ref_name = os.getenv("CI_COMMIT_REF_NAME")
+    project_host = os.getenv("CI_SERVER_HOST")
 
-if project_name and project_namespace and project_ref_name and project_host:
-    html_context = {
-        "display_gitlab": True,  # Integrate Gitlab
-        "gitlab_host": project_host,
-        "gitlab_user": project_namespace,  # Username / namespace
-        "gitlab_repo": project_name,  # Repo name
-        "gitlab_version": project_ref_name,  # Version
-        "conf_py_path": "/doc/sphinx/",  # Path in the checkout to the docs root
-    }
-
+    if project_name and project_namespace and project_ref_name and project_host:
+        html_context = {
+            "display_gitlab": True,  # Integrate Gitlab
+            "gitlab_host": project_host,
+            "gitlab_user": project_namespace,  # Username / namespace
+            "gitlab_repo": project_name,  # Repo name
+            "gitlab_version": project_ref_name,  # Version
+            "conf_py_path": "/doc/sphinx/",  # Path in the checkout to the docs root
+        }
 
 # Include custom roles in each file of docs
 rst_prolog = open("global_roles.rst", "r").read()
@@ -351,9 +359,7 @@ latex_engine = "xelatex"
 
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
-man_pages = [
-    (master_doc, "Template", "Template Project Documentation", [author], 1)
-]
+man_pages = [(master_doc, "Template", "Template Project Documentation", [author], 1)]
 
 # If true, show URL addresses after external links.
 #
