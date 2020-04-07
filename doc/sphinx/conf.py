@@ -301,7 +301,15 @@ latex_elements = {
     # 'pointsize': '10pt',
     # Additional stuff for the LaTeX preamble.
     #
-    # 'preamble': '',
+    "preamble": r"""
+        \usepackage{fontspec}
+        \usepackage{polyglossia}
+        \setdefaultlanguage{russian}
+        \setsansfont{DejaVu Sans}
+        \setmonofont{DejaVu Sans Mono}
+        \setmainfont[Ligatures=TeX]{DejaVu Serif}
+        \newfontfamily\cyrillicfont{DejaVu Serif}[Script=Cyrillic]
+    """,
     # Latex figure (float) alignment
     #
     # 'figure_align': 'htbp',
