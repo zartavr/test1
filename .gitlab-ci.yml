@@ -1,22 +1,23 @@
 stages:
   - build
-  - pages
 
 variables:
   GIT_STRATEGY: fetch
   GIT_CHECKOUT: "true"
   GIT_SUBMODULE_STRATEGY: recursive
 
-build:
+build-clang:
   stage: build
   image: registry.gitlab.thirdpin.io/devops/thirdpin-builder:v0.4
+  variables:
+    CMAKE_TOOLCHAIN_FILE: ./cmake/toolchains/toolchain-clang.cmake
 
   before_script:
     - rm -r ./emb/bin
 
   script:
     - cd emb
-    - cmake -Bbuild -G Ninja -DCMAKE_TOOLCHAIN_FILE="./cmake/toolchains/toolchain-clang.cmake" -DCMAKE_BUILD_TYPE=Release .
+    - cmake -Bbuild -G Ninja -DCMAKE_TOOLCHAIN_FILE="${CMAKE_TOOLCHAIN_FILE}" -DCMAKE_BUILD_TYPE=Release .
     - cd build
     - cmake --build .
     - cd ../
@@ -33,15 +34,10 @@ build:
       - emb/bin/template.elf
       - emb/bin/template.bin
 
-pages:
-  stage: pages
-  image: registry.gitlab.thirdpin.io/devops/sphinx-build:v0.4-python3
-  script:
-    - cd doc/sphinx
-    - make html
-    - mv _build/html/ ../../public
-  artifacts:
-    paths:
-      - public
-  only:
-    - master
+# Do only to check that it compiles
+build-gcc:
+  extends: build-clang
+  variables:
+    CMAKE_TOOLCHAIN_FILE: ./cmake/toolchains/toolchain-none-eabi-arm-generic.cmake
+
+# Pages stahe not actual any more. Use RTD.
