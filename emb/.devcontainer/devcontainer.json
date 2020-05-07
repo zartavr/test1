@@ -1,0 +1,19 @@
+// See https://aka.ms/vscode-remote/devcontainer.json for format details.
+{
+	"name": "Template Builder",
+	"image": "registry.gitlab.thirdpin.io/devops/thirdpin-devcontainer",
+	"extensions": [
+		"ms-vscode.cpptools",
+		"marus25.cortex-debug",
+		"marus25.cortex-debug-dp-stm32f4",
+		"twxs.cmake",
+		"ms-vscode.cmake-tools",
+		"cheshirekow.cmake-format",
+		"webfreak.debug"
+	],
+	"settings": {
+		"terminal.integrated.shell.linux": "/bin/bash"
+	},
+	// Cortex-debug plugin use ::1 ipv6 address so enable it 
+	"runArgs": ["--sysctl", "net.ipv6.conf.all.disable_ipv6=0"]
+}
