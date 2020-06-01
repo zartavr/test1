@@ -1,52 +1,14 @@
 .. _how_to_build:
 
-How to build
-============
+Как собрать
+===========
 
-Необходимые зависимости
------------------------
-
-Перед началом работы с проектом рекомендуется
-ознакомиться со следующими статьями:
-
-- `C++ tools <http://wiki.pin/doku.php/programmers/tools/cpp_tools>`_ —
-  установка всех необходимых инструментов и утилит.
+Для начала работы с проектом стоит
+ознакомиться со статьей, в которой описаны рекомендованные
+подходы к разворачиванию сборочного окружения.
 
 - `VS Code: C++ <http://wiki.pin/doku.php/programmers/tools/ide_for_cpp>`_ —
   установка и настройка IDE (Visual Studio Code) для работы с C++ проектами.
-
-Основные зависимости для сборки любого проекта это:
-
-- `CMake <https://cmake.org/>`__ [in PATH] — основной
-  инструмент для организации и сборки проекта;
-
-- `Ninja <https://ninja-build.org/>`__ [in PATH] — более
-  легковесная, быстрая и портативная альтернатива `make
-  <https://ru.wikipedia.org/wiki/Make>`__;
-
-- компилятор (любой из) [in PATH]:
-
-  - `GNU ARG GCC <https://developer.arm.com/
-    tools-and-software/open-source-software/developer-tools
-    /gnu-toolchain/gnu-rm>`__ — форк ``gcc``, поставляемый
-    компанией ARM;
-
-  - `Clang <http://releases.llvm.org/download.html#8.0.0>`__ —
-    современный компилятор, пришедший на замену ``gcc``,
-    поддерживает компиляцию под ARM;
-
-- `Windows Subsystem for Linux (WSL) <https://docs.microsoft.
-  com/ru-ru/windows/wsl/install-win10>`__ [только для Windows] —
-  слой совместимости для запуска Linux-приложений, необходим
-  для сборки библиотеки OpenCM3. Так же требуется установить
-  следующие пакеты в WSL:
-
-  - make
-  - python
-  - `gcc-arm-embedded <https://launchpad.net/
-    ~team-gcc-arm-embedded/+archive/ubuntu/ppa>`__
-  - git
-
 
 Порядок сборки
 --------------
@@ -55,6 +17,9 @@ How to build
 
     Далее будет описана сборка исключительно с использованием консоли.
     Описание настройки сборки из-под IDE ищите в Wiki.
+
+    Получить доступ к консоли devcontainer можно как в терминале внутри vscode,
+    так и запустив контейнер отдельно. Подробнее в: `Работа из консоли <http://wiki.pin/doku.php/programmers/tools/docker#работа_из_консоли>`_.
 
 Перед началом сборки необходимо создать папку **/emb/build** и перейти
 в неё.
