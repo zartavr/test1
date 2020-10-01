@@ -26,10 +26,10 @@ target_link_libraries(${PROJECT_NAME}
         common::c11cpp17standards
 
         # linker script
-        -T${PROJECT_SOURCE_DIR}/ldscripts/${PROJECT_NAME}.ld
+        -T"${PROJECT_SOURCE_DIR}/ldscripts/${PROJECT_NAME}.ld"
 
         # Generate the Linker Map file
-        -Wl,-Map=${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}.map
+        -Wl,-Map="${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}.map"
 
         # Link public libraries
         etl
