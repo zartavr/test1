@@ -46,6 +46,3 @@ add_subdirectory(yxml)
 
 # Revert standard if it was chaged by libraries
 set(CMAKE_CXX_STANDARD ${BACKUP_CMAKE_CXX_STANDARD})
-
-# Compile projects
-add_subdirectory(template)

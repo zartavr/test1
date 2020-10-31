@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.13)
 
 project(template LANGUAGES C CXX ASM)
 
-add_executable_elf(${PROJECT_NAME} src/main.cpp)
+add_executable_elf(${PROJECT_NAME} main.cpp)
 
 target_include_directories(
     ${PROJECT_NAME}
@@ -11,7 +11,7 @@ target_include_directories(
 )
 
 # Add inner targets
-add_subdirectory(src/hw)
+add_subdirectory(hw)
 
 # Add ${PROJECT_NAME}::version target
 add_version_target(${PROJECT_NAME})
@@ -22,7 +22,7 @@ target_link_libraries(
             common::linker_options
             common::c11cpp17standards
             # linker script
-            -T"${PROJECT_SOURCE_DIR}/ldscripts/${PROJECT_NAME}.ld"
+            -T"${CMAKE_CURRENT_LIST_DIR}/ldscripts/${PROJECT_NAME}.ld"
             # Generate the Linker Map file
             -Wl,-Map="${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}.map"
             # Link public libraries

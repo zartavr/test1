@@ -1,10 +1,10 @@
 [
     {
         "name": "Clang",
-        "toolchainFile": "${workspaceFolder}/cmake/toolchains/toolchain-clang.cmake"
+        "toolchainFile": "${workspaceFolder}/external/cmake/toolchains/toolchain-clang.cmake"
     },
     {
         "name": "GCC ARM",
-        "toolchainFile": "${workspaceFolder}/cmake/toolchains/toolchain-none-eabi-arm-generic.cmake"
+        "toolchainFile": "${workspaceFolder}/external/cmake/toolchains/toolchain-none-eabi-arm-generic.cmake"
     }
 ]
