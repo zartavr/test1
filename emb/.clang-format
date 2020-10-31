@@ -32,7 +32,7 @@ ConstructorInitializerAllOnOneLineOrOnePerLine: "true"
 AllowAllParametersOfDeclarationOnNextLine: "true"
 AllowAllArgumentsOnNextLine: "true"
 ExperimentalAutoDetectBinPacking: "false"
-IndentCaseLabels: "true"
+IndentCaseLabels: "false"
 BreakBeforeBinaryOperators: None
 
 NamespaceIndentation: None
