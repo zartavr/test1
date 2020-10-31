@@ -38,7 +38,7 @@ target_link_libraries(${PROJECT_NAME}
         tplib::hw
         expected
         magic_enum
-        named_type
+        NamedType
         Opencm3::stm32f2
 
         # Generate version
