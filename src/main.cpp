@@ -2,8 +2,10 @@
 #include <libopencm3/stm32/gpio.h>
 #include <yxml/yxml.h>
 
-#include <hw/HwStub.hpp>  // it is just an example, remove it from actual project
-#include <template/version.h>
+#include "template/version.h"
+// HwStub is just an example.
+// REMOVE HwStub.hpp/cpp files from actual project.
+#include "hw/HwStub.hpp"
 
 int main()
 {
@@ -20,8 +22,11 @@ int main()
     int32_t value = 0;
     while (true) {
         auto op_result =
-          hw_stub.do_something([&value](int v) { return value + v; })
-            .map([&value](auto e) { value += e; });
+          hw_stub.do_something([&value](int v) { return value + v; });
+
+        if (op_result) {
+            value += op_result.value();
+        }
 
         if (!op_result) {
             while (true) {}

@@ -22,3 +22,6 @@
 [submodule "external/yxml/yxml"]
 	path = external/yxml/yxml
 	url = https://code.blicky.net/yorhel/yxml.git
+[submodule "external/expected"]
+	path = external/expected
+	url = ../../../thirdpin_team/libraries/generic/nonstd/expected-lite.git

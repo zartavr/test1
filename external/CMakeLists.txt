@@ -31,7 +31,7 @@ target_compile_definitions(etl INTERFACE ETL_NO_CHECKS)
 mark_as_system(etl)
 
 # Compile expected libary
-set(EXPECTED_BUILD_TESTS
+set(EXPECTED_LITE_OPT_BUILD_TESTS
     OFF
     CACHE BOOL "Build unit tests of expected" FORCE
 )

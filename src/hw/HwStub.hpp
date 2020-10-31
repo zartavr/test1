@@ -7,7 +7,7 @@
 #pragma once
 
 #include <etl/delegate.h>
-#include <tl/expected.hpp>
+#include <nonstd/expected.hpp>
 
 namespace hw {
 
@@ -17,7 +17,7 @@ enum class Error_t
 };
 
 template<typename T>
-using expected = tl::expected<T, Error_t>;
+using expected = nonstd::expected<T, Error_t>;
 
 class HwStub
 {

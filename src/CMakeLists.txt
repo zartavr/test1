@@ -30,7 +30,7 @@ target_link_libraries(
             yxml
             cm3cpp
             tplib::hw
-            expected
+            nonstd::expected-lite
             magic_enum
             NamedType
             Opencm3::stm32f2
