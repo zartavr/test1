@@ -6,8 +6,8 @@ add_executable_elf(${PROJECT_NAME} src/main.cpp)
 
 target_include_directories(
     ${PROJECT_NAME}
-    PRIVATE src
-    PUBLIC include
+    PRIVATE ${CMAKE_CURRENT_LIST_DIR}
+    PUBLIC ${CMAKE_CURRENT_LIST_DIR}/../include
 )
 
 # Add inner targets
@@ -42,20 +42,3 @@ target_link_libraries(
 
 # Post-build execs generation
 generate_exes(${PROJECT_NAME} EXE_TYPES srec bin hex)
-
-# Install target that produce binaries
-install(
-    TARGETS ${PROJECT_NAME}
-    COMPONENT ${PROJECT_NAME}
-    RUNTIME DESTINATION bin
-)
-
-# Install port-specific files
-install(
-    FILES ${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}.hex
-          ${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}.bin
-          ${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}.srec
-          ${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}.map
-    COMPONENT ${PROJECT_NAME}
-    DESTINATION bin
-)
