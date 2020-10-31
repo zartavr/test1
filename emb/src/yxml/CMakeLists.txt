@@ -10,3 +10,5 @@ target_include_directories(${PROJECT_NAME}
     PRIVATE
         ${CMAKE_CURRENT_LIST_DIR}/yxml # for inner use
 )
+
+mark_as_system(${PROJECT_NAME})

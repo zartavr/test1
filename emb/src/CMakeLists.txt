@@ -26,6 +26,8 @@ set(BACKUP_CMAKE_CXX_STANDARD ${CMAKE_CXX_STANDARD})
     target_compile_definitions(etl INTERFACE
         ETL_NO_CHECKS
     )
+
+    mark_as_system(etl)
 ## <--
 
 ## --> Compile expected libary

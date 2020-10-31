@@ -1,3 +1,4 @@
+#include <NamedType/named_type.hpp>
 #include <libopencm3/stm32/gpio.h>
 #include <yxml/yxml.h>
 
