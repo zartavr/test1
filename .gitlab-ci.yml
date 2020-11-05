@@ -34,7 +34,7 @@ build-clang:
       - bin/$PROJECT_NAME.hex
       - bin/$PROJECT_NAME.elf
       - bin/$PROJECT_NAME.bin
-      - include/$PROJECT_NAME/version.h
+      - include/$PROJECT_NAME/version.hpp
       - docs/changelog.txt
 
 build-gcc:
@@ -79,7 +79,7 @@ release:
       bin/$PROJECT_NAME.elf
       bin/$PROJECT_NAME.bin"
       --files_with_version
-      "include/$PROJECT_NAME/version.h"
+      "include/$PROJECT_NAME/version.hpp"
       --output_directory release
       || exit 1
 

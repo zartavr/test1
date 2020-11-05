@@ -14,7 +14,7 @@ target_include_directories(
 add_subdirectory(hw)
 
 # Add ${PROJECT_NAME}::version target
-add_version_target(${PROJECT_NAME})
+add_version_target(${PROJECT_NAME} ${CMAKE_CURRENT_LIST_DIR}/../include)
 
 target_link_libraries(
     ${PROJECT_NAME}

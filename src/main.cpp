@@ -2,7 +2,7 @@
 #include <libopencm3/stm32/gpio.h>
 #include <yxml/yxml.h>
 
-#include "template/version.h"
+#include "template/version.hpp"
 // HwStub is just an example.
 // REMOVE HwStub.hpp/cpp files from actual project.
 #include "hw/HwStub.hpp"
