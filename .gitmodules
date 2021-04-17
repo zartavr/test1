@@ -1,6 +1,6 @@
 [submodule "external/cmake"]
 	path = external/cmake
-	url = ../../../thirdpin_team/libraries/build/cmake-files.git
+	url = ../../thirdpin_team/libraries/build/cmake-files.git
 [submodule "external/cm3cpp"]
 	path = external/cm3cpp
 	url = https://github.com/thirdpin/libopencm3_cpp_extensions.git
@@ -9,19 +9,19 @@
 	url = https://github.com/ETLCPP/etl.git
 [submodule "external/libopencm3"]
 	path = external/libopencm3
-	url = ../../../thirdpin_team/libraries/embedded/libopencm3
+	url = ../../thirdpin_team/libraries/embedded/libopencm3
 [submodule "external/magic_enum"]
 	path = external/magic_enum
 	url = https://github.com/thirdpin/magic_enum.git
 [submodule "external/named_type"]
 	path = external/named_type
-	url = ../../../thirdpin_team/libraries/generic/named_type.git
+	url = ../../thirdpin_team/libraries/generic/named_type.git
 [submodule "external/tplib"]
 	path = external/tplib
-	url = ../../../thirdpin_team/libraries/embedded/tplib.git
+	url = ../../thirdpin_team/libraries/embedded/tplib.git
 [submodule "external/yxml/yxml"]
 	path = external/yxml/yxml
 	url = https://code.blicky.net/yorhel/yxml.git
 [submodule "external/expected"]
 	path = external/expected
-	url = ../../../thirdpin_team/libraries/generic/nonstd/expected-lite.git
+	url = ../../thirdpin_team/libraries/generic/nonstd/expected-lite.git
