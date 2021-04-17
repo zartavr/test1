@@ -21,7 +21,7 @@
     так и запустив контейнер отдельно. Подробнее в: `Работа из консоли
     <http://wiki.pin/doku.php/programmers/tools/docker#работа_из_консоли>`_.
 
-Перед началом сборки необходимо создать папку **/emb/build** и перейти
+Перед началом сборки необходимо создать папку **/build** и перейти
 в неё.
 
 
@@ -32,7 +32,7 @@
 
 - `\-DCMAKE_TOOLCHAIN_FILE` — пусть до toolchain-файла, выбирается
   в зависимости от компилятора. Для Clang это
-  "cmake/toolchains/toolchain-clang.cmake";
+  "external/cmake/toolchains/toolchain-clang.cmake";
 
 - `\-DCMAKE_BUILD_TYPE` — тип сборки два основных это *Debug* и
   *Release*. В последнем во время компиляции добавляются флаги оптимизации
@@ -58,7 +58,7 @@
 
     $ mrdir build
     $ cd build
-    $ cmake -DCMAKE_TOOLCHAIN_FILE=../cmake/toolchains/toolchain-clang.cmake -DTOOLCHAIN_CORTEX_CONFIG=cortex-m4 -DCMAKE_BUILD_TYPE=Release -GNinja ..
+    $ cmake -DCMAKE_TOOLCHAIN_FILE=../external/cmake/toolchains/toolchain-clang.cmake -DTOOLCHAIN_CORTEX_CONFIG=cortex-m4 -DCMAKE_BUILD_TYPE=Release -GNinja ..
 
 Если для запуска используется **PowerShell** необходимо указывать абсолютный
 путь до toolchain-файла. Последние две точки в команде указывают на
@@ -69,20 +69,21 @@
 ------
 
 Для сборки необходимо запустить следующую команду, находясь
-в папке **emb/src/build**:
+в папке **/build**:
 
 .. code-block:: bash
 
     $ cmake --build . --target all
 
 Для сборки конкретной целим можно вместо ``all`` указать
-имя цели, например
+имя цели, например:
 
 .. code-block:: bash
 
     $ cmake --build . --target my_subproject
 
-Для сборки и установки используется команда
+Для сборки и установки используется команда (для большинства проектов не
+актуальна):
 
 .. code-block:: bash
 
@@ -94,8 +95,7 @@ Gitlab CI
 Для описания порядка работы с артефактами используется файл **.gitlab-ci.yml**.
 В данном шаблоне представлена простейшая его реализация, которая позволяет
 собрать проект на сервере Gitlab и скопировать полученные артефакты. В файле
-необходимо исправить все пути до артефактов на актуальные и добавить
-необходимые, если подпроектов больше, чем один.
+необходимо исправить все пути до артефактов на актуальные.
 
 В дальнейшем данный раздел будет описан подробнее, а шаблонный
 **.gitlab-ci.yml** будет доработан.
