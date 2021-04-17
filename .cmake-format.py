@@ -197,6 +197,10 @@ with section("parse"):
         },
     }
 
+    vartags = [
+        (".*_COMMAND", ["cmdline"])
+    ]
+
 # -------------------------------------
 # Miscellaneous configurations options.
 # -------------------------------------
