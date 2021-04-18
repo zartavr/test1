@@ -46,7 +46,10 @@ build-gcc:
 
 
 # Check if a version is correct and make a release archive.
-release:
+#
+#   ATTENTION: Remove dot before the job name for a real project.
+#
+.release:
   stage: release
   image: ${BUILDER_IMAGE}
   variables:
@@ -98,7 +101,10 @@ release:
 
 
 # Publish the release to the artifact storage (Yandex Disk).
-publish:
+#
+#   ATTENTION: Remove dot before the job name for a real project.
+#
+.publish:
   stage: publish
   image: registry.gitlab.thirdpin.io/devops/yandex-disk-cmd/master
   variables:
@@ -111,11 +117,8 @@ publish:
   dependencies:
     - release
 
-  # Remove `rules: never` case and uncomment `only: tags` for a real project.
-  # only:
-  #   - tags
-  rules:
-    - when: never
+  only:
+    - tags
 
   before_script:
     - mkdir ci
