@@ -9,11 +9,12 @@ variables:
   GIT_STRATEGY: fetch
   GIT_CHECKOUT: "true"
   GIT_SUBMODULE_STRATEGY: recursive
+  BUILDER_IMAGE: "registry.gitlab.thirdpin.io/devops/thirdpin-builder:v0.8"
 
 # Build with Clang.
 build-clang:
   stage: build
-  image: registry.gitlab.thirdpin.io/devops/thirdpin-builder:v0.6
+  image: ${BUILDER_IMAGE}
   variables:
     CMAKE_TOOLCHAIN_FILE: ${TOOLCHAIN_PATH}/toolchain-clang.cmake
 
@@ -47,7 +48,7 @@ build-gcc:
 # Check if a version is correct and make a release archive.
 release:
   stage: release
-  image: registry.gitlab.thirdpin.io/devops/thirdpin-builder:v0.6
+  image: ${BUILDER_IMAGE}
   variables:
     GIT_STRATEGY: none
 
