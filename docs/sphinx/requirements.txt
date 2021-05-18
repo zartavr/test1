@@ -1,0 +1,6 @@
+Sphinx
+requests
+doc8
+snooty
+sphinx-rtd-theme
+sphinxcontrib.plantuml

@@ -1,27 +1,27 @@
-[submodule "emb/cmake"]
-	path = emb/cmake
-	url = ../../libraries/build/cmake-files.git
-[submodule "emb/src/etl"]
-	path = emb/src/etl
-	url = https://github.com/ETLCPP/etl.git
-[submodule "emb/src/libopencm3"]
-	path = emb/src/libopencm3
-	url = ../../libraries/embedded/libopencm3.git
-[submodule "emb/src/yxml/yxml"]
-	path = emb/src/yxml/yxml
-	url = https://code.blicky.net/yorhel/yxml.git
-[submodule "emb/src/expected"]
-	path = emb/src/expected
-	url = https://github.com/thirdpin/expected.git
-[submodule "emb/src/named_type"]
-	path = emb/src/named_type
-	url = ../../libraries/generic/named_type.git
-[submodule "emb/src/magic_enum"]
-	path = emb/src/magic_enum
-	url = https://github.com/thirdpin/magic_enum.git
-[submodule "emb/src/tplib"]
-	path = emb/src/tplib
-	url = ../../libraries/embedded/tplib.git
-[submodule "emb/src/cm3cpp"]
-	path = emb/src/cm3cpp
+[submodule "external/cmake"]
+	path = external/cmake
+	url = ../../../thirdpin_team/libraries/build/cmake-files.git
+[submodule "external/cm3cpp"]
+	path = external/cm3cpp
 	url = https://github.com/thirdpin/libopencm3_cpp_extensions.git
+[submodule "external/etl"]
+	path = external/etl
+	url = https://github.com/ETLCPP/etl.git
+[submodule "external/libopencm3"]
+	path = external/libopencm3
+	url = ../../../thirdpin_team/libraries/embedded/libopencm3
+[submodule "external/magic_enum"]
+	path = external/magic_enum
+	url = https://github.com/thirdpin/magic_enum.git
+[submodule "external/named_type"]
+	path = external/named_type
+	url = ../../../thirdpin_team/libraries/generic/named_type.git
+[submodule "external/tplib"]
+	path = external/tplib
+	url = ../../../thirdpin_team/libraries/embedded/tplib.git
+[submodule "external/yxml/yxml"]
+	path = external/yxml/yxml
+	url = https://code.blicky.net/yorhel/yxml.git
+[submodule "external/expected"]
+	path = external/expected
+	url = ../../../thirdpin_team/libraries/generic/nonstd/expected-lite.git

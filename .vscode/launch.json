@@ -1,0 +1,78 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Debug (OpenOCD)",
+            "cwd": "${workspaceRoot}",
+            "executable": "${workspaceRoot}/build/src/template/template.elf",
+            "request": "launch",
+            "type": "cortex-debug",
+            "servertype": "openocd",
+            "device": "STM32F205VE",
+            "configFiles": [
+                "interface/stlink.cfg",
+                "target/stm32f2x.cfg"
+            ],
+            "interface": "swd",
+            "showDevDebugOutput": true,
+            "runToMain": true,
+            "svdFile": "${workspaceRoot}/tools/STM32F20x.svd",
+            "swoConfig": {
+                "decoders": [
+                    {
+                        "port": 0,
+                        "label": "sys",
+                        "encoding": "ascii",
+                        "type": "console",
+                    },
+                    {
+                        "port": 1,
+                        "label": "main",
+                        "encoding": "ascii",
+                        "type": "console"
+                    },
+                ],
+                "enabled": true,
+                "source": "probe",
+                "swoFrequency": 2000,
+                "cpuFrequency": 16000000
+            }
+        },
+        {
+            "name": "Debug (J-Link)",
+            "type": "cortex-debug",
+            "request": "launch",
+            "servertype": "jlink",
+            "cwd": "${workspaceRoot}",
+            "executable": "${workspaceRoot}/build/src/template/template.elf",
+            "device": "STM32F205VE",
+            "interface": "swd",
+            "ipAddress": null,
+            "serialNumber": null,
+            "showDevDebugOutput": true,
+            "runToMain": true,
+            "svdFile": "${workspaceRoot}/tools/STM32F20x.svd",
+            "swoConfig": {
+                "decoders": [
+                    {
+                        "port": 0,
+                        "label": "sys",
+                        "encoding": "ascii",
+                        "type": "console",
+                    },
+                    {
+                        "port": 1,
+                        "label": "main",
+                        "encoding": "ascii",
+                        "type": "console"
+                    },
+                ],
+                "enabled": true,
+                "source": "probe",
+            }
+        }
+    ]
+}
