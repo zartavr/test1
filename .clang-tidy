@@ -1,0 +1,118 @@
+Checks: '-*,
+    misc-throw-by-value-catch-by-reference,
+    misc-misplaced-const,
+    misc-redundant-expression,
+    misc-static-assert,
+    misc-unconventional-assign-operator,
+    misc-uniqueptr-reset-release,
+    misc-unused-alias-decls,
+    misc-unused-parameters,
+    misc-unused-using-decls,
+    modernize-avoid-bind,
+    modernize-loop-convert,
+    modernize-make-shared,
+    modernize-make-unique,
+    modernize-raw-string-literal,
+    modernize-redundant-void-arg,
+    modernize-replace-auto-ptr,
+    modernize-replace-random-shuffle,
+    modernize-use-bool-literals,
+    modernize-use-nullptr,
+    modernize-use-using,
+    modernize-use-equals-default,
+    modernize-use-equals-delete,
+    performance-faster-string-find,
+    performance-for-range-copy,
+    performance-implicit-conversion-in-loop,
+    performance-inefficient-algorithm,
+    performance-inefficient-vector-operation,
+    performance-move-constructor-init,
+    performance-no-automatic-move,
+    performance-trivially-destructible,
+    performance-unnecessary-copy-initialization,
+    readability-avoid-const-params-in-decls,
+    readability-const-return-type,
+    readability-container-size-empty,
+    readability-convert-member-functions-to-static,
+    readability-delete-null-pointer,
+    readability-deleted-default,
+    readability-make-member-function-const,
+    readability-misplaced-array-index,
+    readability-non-const-parameter,
+    readability-qualified-auto,
+    readability-redundant-access-specifiers,
+    readability-redundant-control-flow,
+    readability-redundant-function-ptr-dereference,
+    readability-redundant-smartptr-get,
+    readability-redundant-string-cstr,
+    readability-redundant-string-init,
+    readability-static-definition-in-anonymous-namespace,
+    readability-string-compare,
+    readability-uniqueptr-delete-release,
+    readability-redundant-member-init,
+    readability-simplify-subscript-expr,
+    readability-simplify-boolean-expr,
+    readability-inconsistent-declaration-parameter-name,
+    readability-identifier-naming,
+    readability-braces-around-statements,
+    readability-static-accessed-through-instance,
+    readability-implicit-bool-conversion,
+    google-readability-casting,
+    cppcoreguidelines-avoid-non-const-global-variables,
+'
+
+CheckOptions:
+  - key: readability-identifier-naming.ClassCase
+    value: CamelCase
+  - key: readability-identifier-naming.EnumCase
+    value: CamelCase
+  - key: readability-identifier-naming.EnumConstantCase
+    value: UPPER_CASE
+  - key: readability-identifier-naming.LocalVariableCase
+    value: lower_case
+  - key: readability-identifier-naming.MemberCase
+    value: lower_case
+  - key: readability-identifier-naming.PrivateMemberPrefix
+    value: '_'
+  - key: readability-identifier-naming.ProtectedMemberPrefix
+    value: '_'
+  - key: readability-identifier-naming.PublicMemberCase
+    value: lower_case
+  - key: readability-identifier-naming.MethodCase
+    value: lower_case
+  - key: readability-identifier-naming.PrivateMethodPrefix
+    value: '_'
+  - key: readability-identifier-naming.ProtectedMethodPrefix
+    value: '_'
+  - key: readability-identifier-naming.StructCase
+    value: CamelCase
+  - key: readability-identifier-naming.TypedefCase
+    value: CamelCase
+  - key: readability-identifier-naming.UsingCase
+    value: CamelCase
+  - key: readability-identifier-naming.NamespaceCase
+    value: lower_case
+  - key: readability-identifier-naming.GlobalConstantCase
+    value: UPPER_CASE
+  - key: readability-identifier-naming.MacroDefinitionCase
+    value: UPPER_CASE
+  - key: readability-identifier-naming.LocalConstantCase
+    value: lower_case
+  - key: readability-identifier-naming.LocalConstantPointerCase
+    value: lower_case
+  - key: readability-identifier-naming.GlobalConstantPointerCase
+    value: UPPER_CASE
+  - key: readability-identifier-naming.ParameterCase
+    value: lower_case
+  - key: readability-identifier-naming.StaticConstantCase 
+    value: UPPER_CASE
+  - key: readability-identifier-naming.ValueTemplateParameterCase   
+    value: UPPER_CASE
+  - key: readability-identifier-naming.TypeTemplateParameterCase    
+    value: CamelCase
+  - key: readability-identifier-naming.UnionCase
+    value: CamelCase
+  - key: performance-inefficient-vector-operation.VectorLikeClasses
+    value: '::etl::vector;::std::vector' 
+  - key: readability-simplify-subscript-expr.Types
+    value: '::std::basic_string::std::basic_string_view;::std::vector;::std::array;::etl::basic_string;::etl::string_view;::etl::vector;::etl::array'
