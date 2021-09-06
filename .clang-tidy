@@ -106,11 +106,13 @@ CheckOptions:
     value: lower_case
   - key: readability-identifier-naming.StaticConstantCase 
     value: UPPER_CASE
-  - key: readability-identifier-naming.StaticConstantCase 
-    value: UPPER_CASE
   - key: readability-identifier-naming.ValueTemplateParameterCase   
     value: UPPER_CASE
   - key: readability-identifier-naming.TypeTemplateParameterCase    
     value: CamelCase
   - key: readability-identifier-naming.UnionCase
     value: CamelCase
+  - key: performance-inefficient-vector-operation.VectorLikeClasses
+    value: '::etl::vector;::std::vector' 
+  - key: readability-simplify-subscript-expr.Types
+    value: '::std::basic_string::std::basic_string_view;::std::vector;::std::array;::etl::basic_string;::etl::string_view;::etl::vector;::etl::array'
