@@ -1,0 +1,20 @@
+{
+ 
+    "version": "2.0.0",
+    "tasks": [
+      {
+        // Before using, specify the directory where compile_commands.json are located
+        // On default used 'build' directory
+        "label": "Run static analyze",
+        "type": "shell",
+        "command": "clang-tidy -p build -checks='-*, clang-analyzer-core*, clang-analyzer-cplusplus*, clang-analyzer-deadcode*, clang-analyzer-security*,clang-analyzer-alpha.core*, clang-analyzer-alpha.deadcode*, clang-analyzer-alpha.security*'  -allow-enabling-analyzer-alpha-checkers  ${file}",
+        "group": "test",
+        "presentation": {
+          "reveal": "always",
+          "panel": "shared",
+          
+        },
+        
+      }
+    ]
+  }
