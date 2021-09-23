@@ -20,6 +20,7 @@
         "lextudio.restructuredtext",
         "jebbs.plantuml",
         "mhutchie.git-graph",
+        "gruntfuggly.triggertaskonsave",
     ],
     "settings": {
         "terminal.integrated.shell.linux": "/bin/bash",
