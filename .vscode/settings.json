@@ -1,0 +1,12 @@
+{
+    "triggerTaskOnSave.selectedTask": "Run static analyze",
+    "triggerTaskOnSave.tasks": {
+        "test": [
+            "*.cpp",
+            "*.hpp",
+            "*.c",
+            "*.h",
+        ],
+    },
+    
+}
