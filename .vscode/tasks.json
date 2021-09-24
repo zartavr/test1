@@ -6,7 +6,7 @@
       // On default used 'build' directory
       "label": "Run static analyze",
       "type": "shell",
-      "command": "clang-tidy -p build  -allow-enabling-analyzer-alpha-checkers  ${file}",
+      "command": "clang-tidy -p build -checks='-*, clang-analyzer-core*, clang-analyzer-cplusplus*, clang-analyzer-deadcode*, clang-analyzer-security*,clang-analyzer-alpha.core*, clang-analyzer-alpha.deadcode*, clang-analyzer-alpha.security*, clang-analyzer-alpha.security.cert.pos*'  -allow-enabling-analyzer-alpha-checkers  ${file}",
     
       "problemMatcher": {
         "owner": "cpp",
