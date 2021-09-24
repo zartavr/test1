@@ -1,7 +1,7 @@
 // See https://aka.ms/vscode-remote/devcontainer.json for format details.
 {
 	"name": "Template Builder",
-    "image": "registry.gitlab.thirdpin.io/devops/thirdpin-devcontainer:v.0.6",
+    "image": "registry.gitlab.thirdpin.io/devops/thirdpin-devcontainer:v.0.7",
 	"extensions": [
         "llvm-vs-code-extensions.vscode-clangd",
 		"marus25.cortex-debug",
@@ -20,6 +20,7 @@
         "lextudio.restructuredtext",
         "jebbs.plantuml",
         "mhutchie.git-graph",
+        "gruntfuggly.triggertaskonsave",
     ],
     "settings": {
         "terminal.integrated.shell.linux": "/bin/bash",

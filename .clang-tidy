@@ -10,11 +10,7 @@ Checks: '-*,
     concurrency-*,
     linuxkernel-*,
     cert-*,
-    
-    clang-analyzer-cplusplus-*,
-    clang-analyzer-core*,
-    clang-analyzer-deadcode*,
-    
+  
     -readability-magic-numbers,
     -readability-convert-member-functions-to-static,
     -readability-static-accessed-through-instance,

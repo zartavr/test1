@@ -4,3 +4,5 @@
 !c_cpp_properties.json
 !cmake-kits.json
 !launch.json
+!tasks.json
+!settings.json

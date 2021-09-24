@@ -1,0 +1,39 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      // Before using, specify the directory where compile_commands.json are located
+      // On default used 'build' directory
+      "label": "Run static analyze",
+      "type": "shell",
+      "command": "clang-tidy -p build -checks='-*, clang-analyzer-core*, clang-analyzer-cplusplus*, clang-analyzer-deadcode*, clang-analyzer-security*,clang-analyzer-alpha.core*, clang-analyzer-alpha.deadcode*, clang-analyzer-alpha.security*, clang-analyzer-alpha.security.cert.pos*'  -allow-enabling-analyzer-alpha-checkers  ${file}",
+    
+      "problemMatcher": {
+        "owner": "cpp",
+        "fileLocation": "autoDetect",
+        "background": {
+          "activeOnStart": true
+        },
+        "pattern": {
+          "regexp": "^(.*):(\\d+):(\\d+):\\s+(warning|error|note):\\s+(.*)\\[(.*)\\]$",
+          "file": 1,
+          "line": 2,
+          "column": 3,
+          "severity": 4,
+          "message": 5,
+          "code": 6,
+          
+        }
+      },
+      "group": {
+        "kind": "test",
+        "isDefault": true
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared",
+        "focus": false
+      },
+    }
+  ]
+}

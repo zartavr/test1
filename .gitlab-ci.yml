@@ -9,7 +9,7 @@ variables:
   GIT_STRATEGY: fetch
   GIT_CHECKOUT: "true"
   GIT_SUBMODULE_STRATEGY: recursive
-  BUILDER_IMAGE: "registry.gitlab.thirdpin.io/devops/thirdpin-builder:v0.8"
+  BUILDER_IMAGE: "registry.gitlab.thirdpin.io/devops/thirdpin-builder:v0.9"
 
 # Build with Clang.
 build-clang:
