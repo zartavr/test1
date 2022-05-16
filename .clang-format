@@ -1,5 +1,6 @@
 ---
 # Required version of clang-format: >14.0.0
+# Docs: https://releases.llvm.org/14.0.0/tools/clang/docs/ClangFormatStyleOptions.html
 
 # The extra indent or outdent of access modifiers, e.g. public:.
 AccessModifierOffset: -3
