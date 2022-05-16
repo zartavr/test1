@@ -142,11 +142,10 @@ int main()
     const char* long_string_literal =
         "aassssssssssssssssssssssssaaaaaaaaaaaaaaaaaaasssssssssssssssaaaaaaaaaa"
         "aa"
-        "aaaaaaaaaaaaaaaaaaaaaaaa"
+        "aaaaaaaaaaaaaaaaaaaaaaaa";
 
-        // Empty
-        while (false)
-    {}
+    // Empty
+    while (false) {}
 
     while (false) {
         // Not empty
