@@ -29,9 +29,9 @@ class HwStub
     expected<int> do_something(const Doable& something);
 
  private:
-    HwStub(const HwStub&) = delete;
-    HwStub(HwStub&&) = delete;
+    HwStub(const HwStub&)            = delete;
+    HwStub(HwStub&&)                 = delete;
     HwStub& operator=(const HwStub&) = delete;
-    HwStub& operator=(HwStub&&) = delete;
+    HwStub& operator=(HwStub&&)      = delete;
 };
 }  // namespace hw
