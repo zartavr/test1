@@ -13,14 +13,12 @@ AlignAfterOpenBracket: BlockIndent
 AlignArrayOfStructures: Left
 
 # Align assignments on consecutive lines
-# СПОРНО
 AlignConsecutiveAssignments: Consecutive
 
 # Align bit fields on consecutive lines
 AlignConsecutiveBitFields: Consecutive
 
 # Align declarations on consecutive lines
-# СПОРНО
 AlignConsecutiveDeclarations: Consecutive
 
 # Align macro definitions on consecutive lines
@@ -61,7 +59,7 @@ AllowShortEnumsOnASingleLine: false
 AllowShortFunctionsOnASingleLine: Inline
 
 # Never put short ifs on the same line.
-AllowShortIfStatementsOnASingleLine: Never
+AllowShortIfStatementsOnASingleLine: WithoutElse
 
 # Merge all lambdas fitting on a single line.
 AllowShortLambdasOnASingleLine: All
