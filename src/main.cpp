@@ -1,5 +1,5 @@
-#include <NamedType/named_type.hpp>
 #include <libopencm3/stm32/gpio.h>
+#include <NamedType/named_type.hpp>
 #include <yxml/yxml.h>
 
 #include "template/version.hpp"
@@ -22,7 +22,7 @@ int main()
     int32_t value = 0;
     while (true) {
         auto op_result =
-          hw_stub.do_something([&value](int v) { return value + v; });
+            hw_stub.do_something([&value](int v) { return value + v; });
 
         if (op_result) {
             value += op_result.value();
