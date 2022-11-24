@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.17)
 
 # ==================================
-# Cross-project CMake configurations
+# Cross-project CMake configurationsjbmnbmbj
 # ==================================
 
 # Add CMake scripts (includes) into scope
